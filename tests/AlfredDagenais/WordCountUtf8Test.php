@@ -35,7 +35,8 @@ class WordCountUtf8Test extends TestCase
         $this->assertEquals(WordCountUtf8::getWordCount('<strong>This is a html test</strong>'), 5, 'html simple');
         $this->assertEquals(WordCountUtf8::getWordCount("<p>This is a paragraph</p><p>An other paragraph</p>"), 7, 'html paragraph');
         $this->assertEquals(WordCountUtf8::getWordCount("<p>This is a paragraph</p>\n<p>An other paragraph</p>"), 7, 'html paragraph2');
-
+        $this->assertEquals(WordCountUtf8::getWordCount("<p>This is a multiline paragraph</p>
+        <p>An other paragraph with multi space</p>"), 11, 'html paragraph multiline');
     }
 
     /**
@@ -72,8 +73,10 @@ class WordCountUtf8Test extends TestCase
         $this->assertEquals(WordCountUtf8::getCharacterCount('m-dash connected—bits also are not'), 32, 'em-dash');
         $this->assertEquals(WordCountUtf8::getCharacterCount("Un langage qui n'affecte pas votre manière de penser la programmation ne vaut pas la peine d'être connu."), 104, 'french accent');
         $this->assertEquals(WordCountUtf8::getCharacterCount('<strong>This is a html test</strong>'), 19, 'html simple');
-        $this->assertEquals(WordCountUtf8::getCharacterCount("<p>This is a paragraph</p><p>An other paragraph</p>"), 38, 'html paragraph');
-        $this->assertEquals(WordCountUtf8::getCharacterCount("<p>This is a paragraph</p>\n<p>An other paragraph</p>"), 38, 'html paragraph2');
+        $this->assertEquals(WordCountUtf8::getCharacterCount("<p>This is a paragraph</p><p>An other paragraph</p>"), 37, 'html paragraph');
+        $this->assertEquals(WordCountUtf8::getCharacterCount("<p>This is a paragraph</p>\n<p>An other paragraph</p>"), 37, 'html paragraph2');
+        $this->assertEquals(WordCountUtf8::getCharacterCount("<p>This is a multiline paragraph</p>
+        <p>An other paragraph with multi space</p>"), 64, 'html paragraph multiline');
 
     }
     

@@ -48,6 +48,10 @@ If you want, it's very nice to you 😍🔥
  * Online Word Counter : `YES`
  * Microsoft Word : `YES`
 
+## Testing
+
+`composer test` or `./vendor/bin/phpunit tests`
+
 ## License
 
 GNU GPLv3

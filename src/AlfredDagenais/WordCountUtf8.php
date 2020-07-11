@@ -161,7 +161,7 @@ class WordCountUtf8
         $sText = self::getTextCleanedOfEmoji($sText);
         $sText = self::getTextCleanedOfNonPrintableCharacters($sText);
 
-        $sUniqId = 'v@PZNP43FuSNG4WG5e*TmT3JbycG3YZB7SPRh##Y7UtaGb6E5V9hdu8wGPEjvKmrx5Q4Be'; // Unique patern to help Separator
+        $sUniqId = 'vPZNP43FuSNG4WG5eTmT3JbycG3YZB7SPRhY7UtaGb6E5V9hdu8wGPEjvKmrx5Q4Be'; // Unique patern to help Separator
         $sParagraphSeparator = "___{$sUniqId}___"; // Help string for Count
         $sText = self::cleanParagraphText($sText, $sParagraphSeparator, false);
         $sText = trim($sText);
@@ -174,10 +174,15 @@ class WordCountUtf8
         $sText = self::getTextCleanedOfMultipleTagItem($sText, ' '); // Replacing multiple spaces with a single space
         $sText = str_replace($sParagraphSeparator, "\n", $sText);
 
+        $sText = trim($sText);
         $sText = self::getTextCleanedOfMultipleTagItem($sText, '_'); // Replacing multiple underscore with a single underscore
         $sText = self::getTextCleanedOfMultipleTagItem($sText, '+'); // Replacing multiple plus with a single plus
 
+        $sText = str_replace(array(" \n "," \n ","\n "," \n"), "\n", $sText );
         $sText = self::getTextCleanedOfNonPrintableCharacters($sText);
+
+		$sText = self::getTextCleanedOfMultipleTagItem($sText, ' '); // Replacing multiple spaces with a single space
+		$sText = self::getTextCleanedOfMultipleTagItem($sText, "\n"); // Replacing multiple spaces with a single space
 
         $sText = trim($sText); // Be sure no space or new line is at start or end of text
         $sText = trim($sText); // Double trim required
@@ -527,7 +532,7 @@ class WordCountUtf8
         // build an array we can re-use across several operations
         $aBadCharacters = array(
             // control characters
-            chr(0), chr(1), chr(2), chr(3), chr(4), chr(5), chr(6), chr(7), chr(8), chr(9), chr(10),
+            chr(0), chr(1), chr(2), chr(3), chr(4), chr(5), chr(6), chr(7), chr(8), chr(9),
             chr(11), chr(12), chr(13), chr(14), chr(15), chr(16), chr(17), chr(18), chr(19), chr(20),
             chr(21), chr(22), chr(23), chr(24), chr(25), chr(26), chr(27), chr(28), chr(29), chr(30),
             chr(31),
@@ -536,7 +541,10 @@ class WordCountUtf8
         );
 
         // replace the unwanted Characters
-        $sText = str_replace($aBadCharacters, '', $sText);
+        $sText = str_replace($aBadCharacters, "", $sText);
+
+        // New line Chars
+        $sText = str_replace(chr(10), "\n", $sText);
 
         // Special end characters
         $sText = str_replace(array("&iuml;&raquo;&iquest;", 'ï»¿'), '', $sText);

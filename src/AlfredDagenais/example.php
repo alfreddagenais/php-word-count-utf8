@@ -37,7 +37,9 @@ $strings = array(
     'now with 23 a number',
     '<strong>This is a html test</strong>',
     "<p>This is a paragraph</p><p>An other paragraph</p>",
-    "<p>This is a paragraph</p>\n<p>An other paragraph</p>"
+    "<p>This is a paragraph</p>\n<p>An other paragraph</p>",
+    "<p>This is a multiline paragraph</p>
+    <p>An other paragraph with multi space</p>",
 );
 
 $spacerElement = "\n";
