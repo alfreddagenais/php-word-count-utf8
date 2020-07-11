@@ -1,4 +1,4 @@
-name: PHP Composer and Run test suite
+name: build
 
 on:
   push:
