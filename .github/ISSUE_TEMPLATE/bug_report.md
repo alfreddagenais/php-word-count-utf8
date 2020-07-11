@@ -25,7 +25,7 @@ If applicable, add screenshots to help explain your problem.
  - OS: [e.g. Centos]
  - Version [e.g. 22]
  - PHP version [e.g. 7.4.1]
- - Version of the Word Count Script [e.g. 1.0.1]
+ - Version of the Word Count Script [e.g. 1.0.2]
 
 **Additional context**
 Add any other context about the problem here.
