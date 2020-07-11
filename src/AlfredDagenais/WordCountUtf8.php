@@ -164,19 +164,23 @@ class WordCountUtf8
         $sUniqId = 'v@PZNP43FuSNG4WG5e*TmT3JbycG3YZB7SPRh##Y7UtaGb6E5V9hdu8wGPEjvKmrx5Q4Be'; // Unique patern to help Separator
         $sParagraphSeparator = "___{$sUniqId}___"; // Help string for Count
         $sText = self::cleanParagraphText($sText, $sParagraphSeparator, false);
+        $sText = trim($sText);
+
         $sText = self::getTextCleanedOfQuoteHTMLTag($sText);
         $sText = self::getTextCleanedOfHyphenHTMLTag($sText, '');
 
         $sText = strip_tags($sText); // Remove All HTML Tags
         $sText = self::getTextFromHTMLEntities($sText);
         $sText = self::getTextCleanedOfMultipleTagItem($sText, ' '); // Replacing multiple spaces with a single space
+        $sText = str_replace($sParagraphSeparator, "\n", $sText);
+
         $sText = self::getTextCleanedOfMultipleTagItem($sText, '_'); // Replacing multiple underscore with a single underscore
         $sText = self::getTextCleanedOfMultipleTagItem($sText, '+'); // Replacing multiple plus with a single plus
-        $sText = str_replace($sParagraphSeparator, "\n", $sText);
 
         $sText = self::getTextCleanedOfNonPrintableCharacters($sText);
 
         $sText = trim($sText); // Be sure no space or new line is at start or end of text
+        $sText = trim($sText); // Double trim required
 
         return $sText;
     }
@@ -239,8 +243,25 @@ class WordCountUtf8
             return '';
         }
 
-        $sText = str_replace(array("<p>", "</p>"), $sParagraphTag, $sText);
-        $sText = str_replace(array("<P>", "</P>"), $sParagraphTag, $sText);
+        // Replace multi new line for just one chars
+        $aParagraphTag = array(
+            "</p>\n\n\n<p>",
+            "</p>\n\n<p>",
+            "</p>\n<p>",
+            "</p> \n<p>",
+            "</p> \n <p>",
+            "</p> \n\n<p>",
+            "</p> \n\n <p>",
+            "</p> \n\t<p>",
+            "</p> \n\t <p>",
+            "</p><p>",
+            "<p>",
+            "</p>"
+        );
+
+        $sText = str_replace( array_map('strtolower', $aParagraphTag) , $sParagraphTag . ' ', $sText);
+        $sText = str_replace( array_map('strtoupper', $aParagraphTag) , $sParagraphTag . ' ', $sText);
+
         $sText = str_replace(array("&nbsp;", "\t", PHP_EOL), ' ', $sText);
         $sText = self::getTextCleanedOfMultipleTagItem($sText, ' '); // Replacing multiple spaces with a single space
         $sText = self::getTextCleanedOfBRHTMLTag($sText, $sParagraphTag, true);
@@ -253,7 +274,10 @@ class WordCountUtf8
         // Replace multiple $sParagraphTag with only one tag
         $sText = self::getTextCleanedOfMultipleTagItem($sText, $sParagraphTag);
 
+        // Double trim is required
         $sText = trim($sText);
+        $sText = trim($sText);
+
         return $sText;
     }
 

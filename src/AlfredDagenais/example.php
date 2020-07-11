@@ -26,6 +26,7 @@ $strings = array(
     "also 'single quotes' are ok",
     'underbars are_too just one',
     'n-dash ranges 1–3 are NOT',
+    'm-dash connected—bits also are not',
     'hyphenated words-are considered whole',
     'possessive’s are one word',
     '---',
@@ -33,7 +34,10 @@ $strings = array(
     'hi',
     '___',
     'now with 23.17',
-    'now with 23 a number'
+    'now with 23 a number',
+    '<strong>This is a html test</strong>',
+    "<p>This is a paragraph</p><p>An other paragraph</p>",
+    "<p>This is a paragraph</p>\n<p>An other paragraph</p>"
 );
 
 $spacerElement = "\n";
