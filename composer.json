@@ -1,0 +1,29 @@
+{
+  "name": "alfreddagenais/php-word-count-utf8",
+  "description": "PHP implementation of Word-Count for UTF-8 text",
+  "type": "library",
+  "license": "GNU GPLv3",
+  "authors": [
+    {
+      "name": "Alfred Dagenais",
+      "email": "jesuis@alfreddagenais.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "ext-intl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.2"
+  }
+}
