@@ -3,6 +3,7 @@
   "description": "PHP implementation of Word-Count for UTF-8 text",
   "type": "library",
   "license": "GNU GPLv3",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Alfred Dagenais",

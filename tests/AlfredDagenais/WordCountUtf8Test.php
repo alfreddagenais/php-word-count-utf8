@@ -1,8 +1,10 @@
 <?php
 /**
- * Copyright (c) 2020 2020 Alfred Dagenais <jesuis@alfreddagenais.com>
+ * Copyright (c) 2020 Alfred Dagenais <jesuis@alfreddagenais.com>
  * Use of this source code is governed by the GNU GPLv3 license, which
  * can be found in the LICENSE file.
+ * 
+ * @version 1.0.1
  */
 namespace AlfredDagenais;
 
