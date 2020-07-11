@@ -1,6 +1,6 @@
 # PHP Word-Count for UTF-8 text
 
-![build](https://github.com/alfreddagenais/php-word-count-utf8/workflows/build/badge.svg?branch=master)
+![build](https://github.com/alfreddagenais/php-word-count-utf8)
 
 Simple PHP implementation of Word-Count for UTF-8 text. Inspired by [sylae/word-count](https://github.com/sylae/word-count) 😗.
 
