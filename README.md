@@ -1,10 +1,10 @@
 # PHP Word-Count for UTF-8 text
 
-![build](https://github.com/alfreddagenais/php-word-count-utf8/workflows/build/badge.svg?branch=master)
+![build](https://github.com/alfreddagenais/php-word-count-utf8/workflows/build/badge.svg?branch=master) ![Love Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103) ![Stars](https://img.shields.io/github/stars/alfreddagenais/php-word-count-utf8) ![Forks](https://img.shields.io/github/forks/alfreddagenais/php-word-count-utf8) ![Issues](https://img.shields.io/github/issues/alfreddagenais/php-word-count-utf8) ![License](https://img.shields.io/github/license/AkashRajpurohit/clipper) ![Visitors](https://visitor-badge.glitch.me/badge?page_id=alfreddagenais-php-word-count-utf8.visitor-badge) ![Tweet](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Falfreddagenais%2Fphp-word-count-utf8)
 
 Simple PHP implementation of Word-Count for UTF-8 text. Inspired by [sylae/word-count](https://github.com/sylae/word-count) 😗.
 
-## Usage
+## 🙌 Usage
 
 `composer require alfreddagenais/php-word-count-utf8`
 
@@ -39,7 +39,16 @@ If you want, it's very nice to you 😍🔥
 2. Format code with [PHP Formatter](https://marketplace.visualstudio.com/items?itemName=Sophisticode.php-formatter) .
 2. Write tests 🐛.
 3. Send me a PR ✉️.
-4. 😬🦄
+4. 😬 🦄
+
+## Testing
+
+`composer test` or `./vendor/bin/phpunit tests`
+
+## 💵 Support
+> If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of :coffee:
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AlfredDagenais)
 
 ## Todo
 
@@ -47,11 +56,18 @@ If you want, it's very nice to you 😍🔥
  * Google Document : `NO`
  * Online Word Counter : `YES`
  * Microsoft Word : `YES`
+ 
+## 🐛 Bugs or Requests
 
-## Testing
-
-`composer test` or `./vendor/bin/phpunit tests`
+If you encounter any problems feel free to open an [issue](https://github.com/alfreddagenais/php-word-count-utf8/issues/new?template=bug_report.md). If you feel the library is missing a feature, please raise a [ticket](https://github.com/alfreddagenais/php-word-count-utf8/issues/new?template=feature_request.md) on GitHub and I'll look into it. Pull request are also welcome.
 
 ## License
 
 GNU GPLv3
+
+## Where to find me?
+* [Website](https://alfreddagenais.com)
+* [Linkedin](https://www.linkedin.com/in/AlfredDagenais)
+* [Instagram](https://www.instagram.com/AlfredDagenaisWeb)
+* [Twitter](https://www.twitter.com/ProgrammeurWeb)
+* [Facebook](https://www.facebook.com/AlfredDagenaisWeb/)
